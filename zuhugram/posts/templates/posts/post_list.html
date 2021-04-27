@@ -1,0 +1,12 @@
+{% extends 'posts/base.html' %}
+{% block content %}
+User - {{request.user.username}}
+<p><a href="/logout">Logout</a></p>
+<a href="/new" type="button">Post something new!</a>
+<br/>
+		{% for post in object_list %}
+			<strong>Posted by- {{ post.author.username }} </strong> <br/>
+			<img src="{{post.image.url}}" width=400 height=400 class="center">
+			<p><em>Created - {{ post.created }}</em><br/>Caption - {{ post.description }}</p>
+		{% endfor %}
+{% endblock %}
