@@ -1,0 +1,33 @@
+{% extends 'register/base.html' %}
+
+
+{% block title %}Edit Profile{% endblock %}
+
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+	<div class="container2" style="width:1000px; margin:0 auto;">
+	<form method="POST" class="form-group">
+		{% csrf_token %}
+		<table>
+		{{ form|crispy }}
+		<tr colspan=2>
+
+		<a href="{% url 'edit-dp' user.profile.id %}">Edit Profile Photo</a>
+		<br>
+		<button type="submit" class="btn btn-success">Update Profile</button>
+	</tr>
+</table>
+		</form>
+	</div>
+{% else %}
+
+<h1> Sorry Searge, This is'nt authorized for you!</h1>
+
+{% endif %}
+
+{% endblock %}

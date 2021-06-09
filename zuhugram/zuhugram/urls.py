@@ -25,5 +25,8 @@ urlpatterns = [
     path('',PostList.as_view(),name='list'),
     path('new/',PostCreate.as_view(),name='new'),
     path('register/',v.register, name="register"),
+    path('edit_profile/',v.UserEditView.as_view(), name="edit-profile"),
+    path('<int:pk>/edit_profile_photo',v.EditProfilePhotoView.as_view(),name="edit-dp"),
     path('', include("django.contrib.auth.urls")),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

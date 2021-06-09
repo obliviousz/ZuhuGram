@@ -1,0 +1,16 @@
+{% extends 'posts/base.html' %}
+{% block content %}
+
+<a href="/" type="button">Return to Home Page!</a>
+<br><br>
+<h5> Edit Profile Photo </h5>
+
+<form method="POST" enctype="multipart/form-data">
+
+{% csrf_token %}
+
+{{ form.as_p }}
+
+<button class="btn btn-secondary">Update</button>
+</form>
+{% endblock %}
