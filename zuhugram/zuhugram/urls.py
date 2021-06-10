@@ -28,5 +28,6 @@ urlpatterns = [
     path('edit_profile/',v.UserEditView.as_view(), name="edit-profile"),
     path('<int:pk>/edit_profile_photo',v.EditProfilePhotoView.as_view(),name="edit-dp"),
     path('', include("django.contrib.auth.urls")),
+    # path('<int:pk>/profile/',ProfileView.as_view(),name='profile_view')
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,10 +1,11 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .forms import RegisterForm,EditForm
 from django.views import generic
 from django.urls import reverse_lazy
 from posts.models import Profile
+from django.views.generic import DetailView
 # Create your views here.
 
 def register(response):

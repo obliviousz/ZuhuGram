@@ -1,16 +1,18 @@
-{% extends 'posts/base.html' %}
+{% extends 'profile/base.html' %}
 
 {% load static %}
 
 {% block content %}
 <div class="container2">
-	<strong>User - {{request.user.username}}</strong>
-	</br>
-	<a href="/logout">Logout</a>
+	<strong> Profile </strong>
+	<img src="{{request.user.profile.profile_pic.url}}" class="rounded-circle" width="100" height="100">
 	<br>
-	<a href="/edit_profile">Edit Profile</a>
+	<strong>{{request.user.username}}</strong>
 	<br>
-	
+	Bio -
+	<br>
+	{{request.user.profile.bio}}
+	<br>
 </div>
 <a href="/new" type="button">Post something new!</a>
 <br/>
@@ -21,7 +23,6 @@
 			<img src="{{post.image.url}}" width=400 height=400 class="center">
 			<p><em>Created - {{ post.created }}</em><br/>Caption - {{ post.description }}</p>
 			</div>
-
 		{% else %}
 			<div class="container2">
 			<strong>Posted by- <img src="{% static 'zuhugram/images/default.jpg' %}" class="rounded-circle" width="50" height="50"> {{ post.author.username }} </strong>  <br/>
@@ -30,4 +31,11 @@
 			</div>
 		{% endif %}
 		{% endfor %}
+	</br>
+	<a href="/logout">Logout</a>
+	<br>
+	<a href="/edit_profile">Edit Profile</a>
+	<br>
+	<a href="/">Back to Feeds</a>
+	<br>
 {% endblock %}

@@ -17,7 +17,7 @@
 		{{ form|crispy }}
 		<tr colspan=2>
 
-		<a href="{% url 'edit-dp' user.profile.id %}">Edit Profile Photo</a>
+		<a href="{%url 'edit-dp' user.profile.id %}">Edit Profile Photo</a>
 		<br>
 		<button type="submit" class="btn btn-success">Update Profile</button>
 	</tr>
@@ -26,7 +26,7 @@
 	</div>
 {% else %}
 
-<h1> Sorry Searge, This is'nt authorized for you!</h1>
+<h1> Sorry Sarge, This is'nt authorized for you!</h1>
 
 {% endif %}
 
