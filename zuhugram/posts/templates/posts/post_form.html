@@ -1,7 +1,7 @@
 {% extends 'posts/base.html' %}
 {% block content %}
 <a href="/" type="button">Return to Home Page!</a>
-<h1> Create New Post </h1>
+<h3> Create New Post </h3>
 <form action="{% url 'new' %}" method="POST" enctype="multipart/form-data">
 {% csrf_token %}
 {{ form.as_p }}
